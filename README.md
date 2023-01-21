@@ -16,5 +16,5 @@ Se ha creado un nuevo proyecto de node.js, a fin de crear pruebas unitarias (alo
 Para ejecutar las pruebas unitarias siga los siguientes pasos:
 1. Abra una nueva terminal y dirijase a la direccion donde se aloja la carpeta del proyecto.
 2. Ejecute *npm init* para instalar todas las dependencias del proyecto
-3. Ejecute *npm run* test para ejecutar las pruebas unitarias definidas en el proyecto
+3. Ejecute *npm run test* para ejecutar las pruebas unitarias definidas en el proyecto
    
