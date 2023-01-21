@@ -1,0 +1,173 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Times New Roman", Times, serif;
+
+}
+div,::after,::before{
+    box-sizing: border-box;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+#head{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('./public/wave_head.svg') no-repeat, url('./public/wave_1_1.svg') no-repeat bottom;
+    border-bottom: 2px gray;
+    
+}
+
+#head>div{
+
+    position: absolute;
+    margin: 0px auto;
+    padding: 10%;
+    margin-top: 7%;
+    
+}
+
+
+
+#head>div>h1{
+    
+    font-size: 48px;
+    text-align: center;
+}
+
+#head>div>p{
+    font-size: 28px;
+    text-align: center;
+    padding: 1%;
+}
+
+#main>article{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10%;
+}
+
+.reverse{
+    flex-direction:row-reverse;
+}
+
+#main>article:first-child{
+    background: url('./public/wave_1.svg') no-repeat center,url('./public/wave_2_1.svg') no-repeat center;
+}
+
+#main>article:nth-child(2){
+    background: url('./public/wave_2.svg') no-repeat, url('./public/wave_2_2.svg') ;
+}
+
+#main>article:nth-child(3){
+    background: url('./public/wave_3.svg');
+}
+
+#main>article:nth-child(4){
+    background: url('./public/wave_4.svg') repeat-y;
+}
+
+#main>article:nth-child(5){
+    height: 90%;
+    padding-left: 5%;
+    background: url('./public/city_1.svg') no-repeat center, url('./public/city_2.svg') no-repeat center, url('./public/city_3.svg') no-repeat center;
+}
+#main>article:last-child{
+    background: url('./public/wave_5.svg'), url('./public/wave5_1.svg') ;
+}
+
+.card{
+    display: inline-block;
+    background-color: white;
+    height: 45vh;
+    width: 30vw;
+    margin: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 2%;
+    align-items: center;
+    border: 2px solid gainsboro;
+
+}
+
+
+.card-float{
+    position:absolute;
+    opacity:.95;
+    margin-top: 50vh;
+    width: 40%;
+}
+
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    margin: 2%;
+}
+
+button{
+    width: 150px;
+    margin: 10px;
+    height: 5vh;
+
+}
+button:hover{
+    cursor: pointer;
+}
+
+
+.card>h1{
+    font-size: 40px;
+}
+
+.card>p{
+    text-align: center;
+    font-size: 28px;
+}
+
+.card>span{
+    font-size: 20px;
+}
+
+.descuento{
+    font-weight: bold;
+    
+}
+
+
+
+footer{
+    margin-top: 180px;
+    width: 100%;
+    height: 40vh;
+    display: flex;
+
+    align-items: center;
+}
+
+#back-top{
+
+    width: 90%;
+    height: 25%;
+    margin: 0px auto;
+
+    background-color:white;
+
+    border-radius: 5px;
+
+    transition: all 300ms;
+
+    font-size: 30px;
+}
+
+#back-top:hover{
+    width: 95%;
+    transform: translateY(-5%);
+    background-color: rgba(243, 243, 243, 0.262);
+}
+
+

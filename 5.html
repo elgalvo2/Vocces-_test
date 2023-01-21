@@ -1,16 +1,83 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 5</title>
+    <style>
+        li{
+            cursor: pointer;
+            transition: all 300ms;
+            padding: 5px;
+            width: fit-content;
+            font-size: large;
+        }
+        li:hover{
+            color: blueviolet;
+            margin-left: 5px;
+        }
+    </style>
 </head>
+
 <body>
     <article>
         <h1>Listado de usuarios</h1>
-        <p>Queremos mostrar el listado de usarios que existen en nuestro sistema y que al hacer click sobre uno de ellos nos muestre la información del usuario.</p>
-        <p>Para obtener el listado de usuarios el backend nos ha proporcionado el siguiente endpoint <a href="https://jsonplaceholder.typicode.com/users" target="_blank">Users</a>.</p>
+        <p>Queremos mostrar el listado de usarios que existen en nuestro sistema y que al hacer click sobre uno de ellos
+            nos muestre la información del usuario.</p>
+        <p>Para obtener el listado de usuarios el backend nos ha proporcionado el siguiente endpoint <a
+                href="https://jsonplaceholder.typicode.com/users" target="_blank">Users</a>.</p>
     </article>
+    <div id="layout">
+        <ul id="list">
+
+        </ul>
+        <div id="info-cont">
+
+        </div>
+    </div>
+    <script>
+
+        // Obtenemos el contenedor de los items de lista
+        let list_container = document.getElementById("list")
+
+        // obtenemos el contenedor de la informacion
+        let info_container = document.getElementById("info-cont")
+
+        // creamos el template de los items lista... se les asgina una funcion al envento onclick que recibira el id del usuario
+        let list_item = (user_data) => `<li onclick = "click_fun(${user_data.id})" id='${user_data.id}' class='user-item'>${user_data.username}</li>`
+
+        // funcion que recibe el id del usuario selecionado... busca este id en la coleccion de datos guardada en session storage
+        let click_fun = (id)=>{
+            let data = JSON.parse(sessionStorage.getItem('user-data'))
+            let user_info = data.find(item=>item.id==id)
+            // isertamos los datos del usuario como texto plano en el respectivo contenedor
+            info_container.innerText = JSON.stringify(user_info)
+        }
+
+        // funcion solucion
+        async function solution(url, list_m, list_cont) {
+
+            //fetch al endpoint
+            let d = await fetch("https://jsonplaceholder.typicode.com/users")
+            let data = await d.json()
+            //guardamos datos obtenidos en session storage para acceder a ellos desde la funcion click_fun
+            sessionStorage.setItem('user-data',JSON.stringify(data))
+
+            //creamos un item de lista por cada objeto en el array obtenido de la consulta al endpoint
+            let list = data.map(element => list_m(element))
+
+            //insertamos los items de lista en el respectivo contenedor
+            list_cont.innerHTML = list.join("")
+        }
+
+        solution("https://jsonplaceholder.typicode.com/users", list_item, list_container)
+
+
+
+
+    </script>
 </body>
+
 </html>

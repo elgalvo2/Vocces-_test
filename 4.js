@@ -14,7 +14,8 @@ const showText = function() {
 
 // --------------- Solo puedes tocar desde aquí ------------- //
 showText.text = 'Hola';
-showText2 = showText;
+// showText2 = showText; <--- de esta forma se esta creando una referencia al objeto retornado por la funcion showTest 
+showText2 = Object.assign({},showText); // de esta forma no se esta creando tal referencia... es un objeto diferente 
 showText2.text = 'Adiós';
 // --------------- hasta aquí ------------------------------- //
 
