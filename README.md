@@ -1,7 +1,7 @@
 # Prueba técnica Vocces 2022
 
-## ¿En qué consiste?
-La prueba consta de 6 ejercicios básicos cada uno en un archivo numerado del 1 al 6.
+## ¿En qué consiste este documento?
+Este es el resultado de la prueba tecnica para concursar por el puesto Desarrollador Front End
 
 Ejercicios:
   1. Extraer la diferencia.
@@ -11,17 +11,10 @@ Ejercicios:
   5. Mostar información de API.
   6. Maquetar elementos.
 
-## ¿Cómo entregar la prueba?
- - Copie, clone o realice un fork de este repositorio.
- - Suba el código a un repositorio público de su propiedad con un 'Initial commit'.
- - Realice los ejercicios.
- - Envienos un correo con el link al repositorio para que podamos evaluarla.
-
-## ¿Qué se valora en la prueba?
- - Los commits.
- - La legibilidad del código.
- - La resolución de los ejercicios.
- - Las técnicas utilizadas.
-
-## ¿Tengo dudas?
- - Puede añadir una [nueva issue](https://gitlab.com/vocces-pruebas-publicas/prueba-fronend-2023/-/issues/new) indicando su duda o escribirnos un email.
+## Sobre esta prueba
+Se ha creado un nuevo proyecto de node.js, a fin de crear pruebas unitarias (alojadas en la carpeta __test__) para las tres primeras pruebas del reto tecnico (1.js, 2.js y 3.js)
+Para ejecutar las pruebas unitarias siga los siguientes pasos:
+1. Abra una nueva terminal y dirijase a la direccion donde se aloja la carpeta del proyecto.
+2. Ejecute *npm init* para instalar todas las dependencias del proyecto
+3. Ejecute *npm run test* para ejecutar las pruebas unitarias definidas en el proyecto
+   
